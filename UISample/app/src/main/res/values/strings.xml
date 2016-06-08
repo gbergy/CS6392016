@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">UI Sample</string>
+    <string name="name">Greg\nGoldberg</string>
+    <string name="classes">CS 639\nCS 624</string>
+    <string name="description">Icon of Greg Goldberg</string>
+</resources>
+
