@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView imv;
     Bitmap bmap;
-    String url = "http://www.brooklyneagle.com/sites/default/files/styles/free_style/public/pages/b_LICH_ER_byMFrost0001_3.jpg?itok=AFNOC3nO&c=b768e7cd2794a27f8d8d6b9a9b9e19ac";
+
 
 
     @Override
@@ -70,12 +70,15 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public class LongOperation extends AsyncTask<String, Void, Integer> {
+    public class LongOperation extends AsyncTask<String, Void, Bitmap> {
 
         @Override
-        protected Integer doInBackground(String... params) {
+        protected Bitmap doInBackground(String... params) {
             try {
-                bmap = BitmapFactory.decodeStream((InputStream) new URL(url).getContent());
+                URL url = new URL("https://github.com/gbergy/CS6392016/blob/master/AsyncTaskProject/placeOfBirth.jpg?raw=true");
+                InputStream is = url.openConnection().getInputStream();
+                bmap = BitmapFactory.decodeStream(is);
+                return bmap;
             } catch (Exception e) {
                 Log.e("Image", "Failed to load image", e);
                 Log.e("error", e.getMessage());
@@ -89,16 +92,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        protected void onPostExecute(Integer integer) {
-            super.onPostExecute(integer);
-
-            imv.setImageBitmap(bmap);
+        protected void onPostExecute(Bitmap bitmap) {
+            super.onPostExecute(bitmap);
+            imv.setImageBitmap(bitmap);
         }
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
         }
+
     }
 
 }
