@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">"Greg Goldberg Midterm "</string>
+    <string name="action_settings">Settings</string>
+    <string name="calc_button">Calculate</string>
+    <string name="instructions">Enter in an amount in US Dollars, then press Calculate to find the value in Francs CFA</string>
+    <string name="dollars_label">$: &#160;</string>
+    <string name="francs_label">&#8355;: &#160;</string>
+</resources>
