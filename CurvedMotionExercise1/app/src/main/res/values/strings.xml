@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">"Curved Motion Exercise"</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_label">Curve It!</string>
+</resources>
